@@ -9,7 +9,7 @@ public class CameraHandler : MonoBehaviour
     private float speed = 1000f;
 
     public static Vector3 camPos;
-    private readonly float edgeScreen = 100f;
+    public static readonly float edgeScreen = 100f;
 
 
     void Update()
