@@ -6,8 +6,7 @@ public class GLSquare : GuideLine
 {
     protected override void Awake()
     {
-        base.candiDirectionAsk = true;
-        base.candiDirectionAskState = true;
+        base.candiDirectionAsk = false;
         base.Awake();
         DropArea.DropConditions.Add(new IsCandiSquare());
     }

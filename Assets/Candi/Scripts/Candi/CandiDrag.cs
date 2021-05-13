@@ -25,7 +25,9 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public Vector2 tempPosition;
 
-    private bool beingHeld = false;
+    private bool leftBeingHeld = false;
+    private bool rightBeingHeld = false;
+
     public bool horizontalState;
     private float groundY = -220f;
 
@@ -40,12 +42,12 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void Update()
     {
-        if (beingHeld)
+        if (leftBeingHeld)
         {
-            if (Input.GetMouseButtonUp(1))
-            {
-                transform.Rotate(0f, 0f, -90f);
-            }
+            if (Input.GetMouseButtonDown(1)) rightBeingHeld = true;
+            else if (Input.GetMouseButtonUp(1)) rightBeingHeld = false;
+            if (rightBeingHeld) transform.Rotate(0f, 0f, -0.5f);
+
             if (Input.mousePosition.x > Screen.width - CameraHandler.edgeScreen || Input.mousePosition.x < CameraHandler.edgeScreen)
             {
                 Vector2 tempCamPos = CameraHandler.camPos;
@@ -88,7 +90,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         canvasGroup.blocksRaycasts = false;
 
         OnBeginDragHandler?.Invoke(eventData);
-        beingHeld = true;
+        leftBeingHeld = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -108,7 +110,6 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-
         if (!canDrag) return;
 
         canvasGroup.alpha = 1f;
@@ -116,7 +117,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         particleCreateAndDestroy();
         OnEndDragHandler?.Invoke(eventData, false);
-        beingHeld = false;
+        leftBeingHeld = false;
 
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);

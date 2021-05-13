@@ -9,7 +9,7 @@ public class CandiRender : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.GetComponent<Image>().sprite = spriteArray[Random.Range(0, 7)];
+        gameObject.GetComponent<Image>().sprite = spriteArray[Random.Range(0, spriteArray.Length)];
     }
 
 }

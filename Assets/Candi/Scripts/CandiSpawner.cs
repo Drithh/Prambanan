@@ -1,29 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CandiSpawner : MonoBehaviour
 {
-    public GameObject candi;
-    public float spawnRate = 0.5f;
+    public GameObject[] candiFigure;
 
-    private float randX;
+    public static int[] totalSpawnBlock = new int[] { 0, 0, 0 };
+
+    private float spawnRate = 1f;
     private Vector2 whereCandiSpawn;
     private float nextSpawn = 0f;
-    private int max = 10;
-    private RectTransform canvas;
+    private int figureRandomizer;
 
     void Update()
     {
-        if(Time.time > nextSpawn && max > 0)
+        if (Time.time > nextSpawn && totalSpawnBlock.Sum() > 0)
         {
             nextSpawn = Time.time + spawnRate;
-            randX = Random.Range(-1200f, 1200f);
-            whereCandiSpawn = new Vector2(randX, transform.position.y);
+            whereCandiSpawn = new Vector2(Random.Range(-1200f, 1200f), transform.position.y);
 
-            GameObject spawnedPrefab = Instantiate(candi, whereCandiSpawn, Quaternion.identity) as GameObject;
+            do
+            {
+                figureRandomizer = Random.Range(0, 2);
+            } while (totalSpawnBlock[figureRandomizer] < 1);
+
+            totalSpawnBlock[figureRandomizer]--;
+            GameObject spawnedPrefab = Instantiate(candiFigure[figureRandomizer], whereCandiSpawn, Quaternion.identity);
             spawnedPrefab.transform.SetParent(GameObject.FindGameObjectWithTag("CandiBlock").transform, false);
-            max--;
         }
     }
 }
