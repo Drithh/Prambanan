@@ -11,6 +11,9 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [SerializeField] private Canvas canvas;
 
     private RectTransform rectTransform;
+    public GameObject candiParticle;
+    private CanvasGroup canvasGroup;
+    private new Rigidbody2D rigidbody2D;
 
     public event Action<PointerEventData> OnBeginDragHandler;
     public event Action<PointerEventData> OnDragHandler;
@@ -23,24 +26,16 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private bool beingHeld = false;
     public bool horizontalState;
-    public GameObject candiParticle;
+    private float groundY = -219f;
 
-
-    private void particleCreateAndDestroy()
-    {
-        GameObject exp1 = Instantiate(candiParticle, transform.position, candiParticle.transform.rotation) as GameObject;
-        exp1.GetComponent<ParticleSystem>().Play();
-        Destroy(exp1, 2f);
-    }
     private void Awake()
     {
+        rigidbody2D = GetComponent<Rigidbody2D>();
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
+        canvasGroup = GetComponentInParent<CanvasGroup>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        particleCreateAndDestroy();
-    }
+
     private void Update()
     {
 
@@ -61,26 +56,45 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 rectTransform.anchoredPosition = tempCamPos;
             }
         }
-
+        if (rectTransform.anchoredPosition.x > 1200f || rectTransform.anchoredPosition.x < -1200f)
+        {
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x > 1200f ? 1200f : -1200f, rectTransform.anchoredPosition.y);
+        }
+        if (rectTransform.anchoredPosition.y < (groundY - 1))
+        {
+            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, groundY) ;
+        }
 
     }
+
+    private void particleCreateAndDestroy()
+    {
+        GameObject particle = Instantiate(candiParticle, transform.position, candiParticle.transform.rotation) as GameObject;
+        particle.GetComponent<ParticleSystem>().Play();
+        Destroy(particle, 2f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        particleCreateAndDestroy();
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!canDrag)
-        {
-            return;
-        }
+        if (!canDrag) return;
+
+        canvasGroup.alpha = .5f;
+        rigidbody2D.gravityScale = 0f;
+        canvasGroup.blocksRaycasts = false;
+
         OnBeginDragHandler?.Invoke(eventData);
         beingHeld = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!canDrag) return;
 
-        if (!canDrag)
-        {
-            return;
-        }
         OnDragHandler?.Invoke(eventData);
         if (followCursor)
         {
@@ -92,15 +106,10 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        particleCreateAndDestroy();
-        if (!canDrag)
-        {
-            return;
-        }
+        if (!canDrag) return;
 
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
-
         CandiArea dropArea = null;
 
         foreach (var result in results)
@@ -117,7 +126,6 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             if (dropArea.Accepts(this))
             {
-                Debug.Log("Drop Accept");
                 canDrag = false;
                 dropArea.Drop(this);
                 OnEndDragHandler?.Invoke(eventData, true);
@@ -125,7 +133,11 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
         }
 
-        // rectTransform.anchoredPosition = StartPosition;
+        rigidbody2D.gravityScale = 150f;
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+
+        particleCreateAndDestroy();
         OnEndDragHandler?.Invoke(eventData, false);
         beingHeld = false;
 

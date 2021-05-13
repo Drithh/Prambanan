@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  candiParticle: {fileID: 0}
   tempPosition: {x: 0, y: 0}
   horizontalState: 0
+  candiParticle: {fileID: 0}
 --- !u!1 &394076630
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,13 +299,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
   m_Mass: 4694.407
-  m_LinearDrag: 1
-  m_AngularDrag: 1
-  m_GravityScale: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 150
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &856550574
 BoxCollider2D:
@@ -7706,6 +7706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RectangleStone
       objectReference: {fileID: 0}
+    - target: {fileID: 3615641844637484748, guid: cdd878c3982b6f049a2e13516936f520, type: 3}
+      propertyPath: ps1
+      value: 
+      objectReference: {fileID: 1970530562}
     - target: {fileID: 3615641844637484748, guid: cdd878c3982b6f049a2e13516936f520, type: 3}
       propertyPath: canvas
       value: 
