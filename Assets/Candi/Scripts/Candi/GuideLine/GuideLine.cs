@@ -19,7 +19,6 @@ public class GuideLine : MonoBehaviour
 	private void OnItemDropped(CandiDrag draggable)
 	{
 		if (candiDirectionAsk && candiDirectionAskState != draggable.horizontalState) return;
-
 		totalCandi++;
 		draggable.transform.position = transform.position;
 		Destroy(gameObject);

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4369783591779194200}
   - component: {fileID: 4369783591779194201}
   - component: {fileID: 4369783591779194202}
+  - component: {fileID: 8127950869927969590}
   m_Layer: 0
   m_Name: CandiBlock
   m_TagString: Untagged
@@ -39,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 402.5, y: -94.8}
-  m_SizeDelta: {x: 90, y: 40}
+  m_AnchoredPosition: {x: -2, y: 363}
+  m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4369783591779194204
 CanvasRenderer:
@@ -70,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ff864f2ef2f7c1d449e5dad387e5f02d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -153,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 90, y: 40}
+  m_Size: {x: 80, y: 40}
   m_EdgeRadius: 0
 --- !u!114 &4369783591779194202
 MonoBehaviour:
@@ -167,3 +168,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa937a49a8abf1945843791f199ced41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8127950869927969590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369783591779194196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a05c6140fb6bfa42a0a7f210b36f627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteArray:
+  - {fileID: 21300000, guid: ba2995ae496ae1f4b99e775a9db2ebf6, type: 3}
+  - {fileID: 21300000, guid: 52ab18c5db86ff74785b4310e57cf1b2, type: 3}
+  - {fileID: 21300000, guid: a1aa9f2c547068642af39d2f355fd09c, type: 3}
+  - {fileID: 21300000, guid: 819053e86794a9141a3f8725135b8ee5, type: 3}
+  - {fileID: 21300000, guid: 69bdfa9a5bc8efa4099f904eb07be474, type: 3}
+  - {fileID: 21300000, guid: a102d2015dd37304583f3d8720b09288, type: 3}
+  - {fileID: 21300000, guid: e025eabdc1c122e409de0cc7a1e11e65, type: 3}

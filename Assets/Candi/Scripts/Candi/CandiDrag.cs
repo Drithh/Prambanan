@@ -24,7 +24,6 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public bool canDrag { get; set; } = true;
 
     public Vector2 tempPosition;
-    private  Vector2 lastPosition = new Vector2 (1000.0f, 1000.0f);
 
     private bool beingHeld = false;
     public bool horizontalState;
@@ -76,9 +75,8 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((Mathf.Abs(lastPosition.x) - Mathf.Abs(rectTransform.anchoredPosition.x)) > 50 || (Mathf.Abs(lastPosition.y) - Mathf.Abs(rectTransform.anchoredPosition.y)) > 50) particleCreateAndDestroy();
-        lastPosition = rectTransform.anchoredPosition;
-
+        if (Math.Abs((tempPosition.x + 360) - (rectTransform.anchoredPosition.x + 360)) > 50 || Math.Abs((tempPosition.y + 360) - (rectTransform.anchoredPosition.y + 360)) > 50) particleCreateAndDestroy();
+        tempPosition = rectTransform.anchoredPosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -127,49 +125,28 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         foreach (var result in results)
         {
             dropArea = result.gameObject.GetComponent<CandiArea>();
-
-            if (dropArea != null)
-            {
-                break;
-            }
+            if (dropArea != null) break;
         }
 
-        if (dropArea != null)
+        if (dropArea != null && dropArea.Accepts(this))
         {
-            if (dropArea.Accepts(this))
+            int TransformX = (int) rigidbody2D.rotation;
+            if(TransformX < 0) TransformX = (TransformX - 45) / 90 * 90;
+            else  TransformX = (TransformX + 45) / 90 * 90;
+
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0, TransformX));
+
+            if (Mathf.Abs(TransformX) / 90 % 2 == 1) horizontalState = false;
+            else horizontalState = true;
+
+            int lastTotalCandi = GuideLine.totalCandi;
+            dropArea.Drop(this);
+            OnEndDragHandler?.Invoke(eventData, true);
+
+            if (lastTotalCandi != GuideLine.totalCandi)
             {
-                int TransformX = (int) rigidbody2D.rotation;
-                if(TransformX < 0)
-                {
-                    TransformX = (TransformX - 45) / 90 * 90;
-                }
-                else 
-                {
-                    TransformX = (TransformX + 45) / 90 * 90;
-                }
-
-
-
-                transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0, TransformX));
-
-                if (Mathf.Abs(TransformX) / 90 % 2 == 1)
-                {
-                    horizontalState = false;
-                }
-                else horizontalState = true;
-                int lastTotalCandi = GuideLine.totalCandi;
-                dropArea.Drop(this);
-                if(lastTotalCandi != GuideLine.totalCandi)
-                {
-                    rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static; 
-                    canDrag = false;
-                }
-                else
-                {
-                    rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                    rigidbody2D.gravityScale = 150f;
-                }
-                OnEndDragHandler?.Invoke(eventData, true);
+                rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                canDrag = false;
                 return;
             }
         }
@@ -177,9 +154,4 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rigidbody2D.gravityScale = 150f;
 
     }
-
-    //public void OnInitializePotentialDrag(PointerEventData eventData)
-    //{
-    //    StartPosition = rectTransform.anchoredPosition;
-    //}
 }
