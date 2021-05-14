@@ -150,7 +150,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 canDrag = false;
                 StartCoroutine(Waiter());
-
+                transform.SetSiblingIndex(0);
                 return;
             }
         }

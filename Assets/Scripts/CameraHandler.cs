@@ -9,7 +9,7 @@ public class CameraHandler : MonoBehaviour
     private float speed = 1000f;
 
     public static Vector3 camPos;
-    public static readonly float edgeScreen = 100f;
+    public static readonly float edgeScreen = 120f;
 
 
     void Update()
@@ -29,7 +29,7 @@ public class CameraHandler : MonoBehaviour
             float mousePosRightSide = (Screen.width - Input.mousePosition.x);
             if (mousePosRightSide > -1)
             {
-                if (camPos.x < 640) camPos.x += speed * 50 / (mousePosRightSide > 15 ? mousePosRightSide : 15) * Time.deltaTime;
+                if (camPos.x < 640) camPos.x += speed * 100 / (mousePosRightSide > 15 ? mousePosRightSide : 15) * Time.deltaTime;
                 else if (camPos.x > 640) camPos.x = 640;
             }
         }
@@ -38,7 +38,7 @@ public class CameraHandler : MonoBehaviour
         {
             if(Input.mousePosition.x > -1)
             {
-                if (camPos.x > -640) camPos.x -= speed * 50 / (Input.mousePosition.x > 15 ? Input.mousePosition.x : 15) * Time.deltaTime;
+                if (camPos.x > -640) camPos.x -= speed * 100 / (Input.mousePosition.x > 15 ? Input.mousePosition.x : 15) * Time.deltaTime;
                 else if (camPos.x < -640) camPos.x = -640;
             }
         }
