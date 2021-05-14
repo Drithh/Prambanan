@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GLHorizontalRectangle : GuideLine
 {
+
     protected override void Awake()
     {
-        base.candiDirectionAsk = true;
-        base.candiDirectionAskState = true;
+        candiDirectionAsk = true;
+        candiDirectionAskState = true;
+
         base.Awake();
         DropArea.DropConditions.Add(new IsCandiRectangle());
     }

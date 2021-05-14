@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 
 
 public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -30,7 +30,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public bool horizontalState;
     private float groundY = -220f;
-
+    private float screenScale = (965f / Screen.width);
     private void Awake()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -42,11 +42,12 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void Update()
     {
+
         if (leftBeingHeld)
         {
             if (Input.GetMouseButtonDown(1)) rightBeingHeld = true;
             else if (Input.GetMouseButtonUp(1)) rightBeingHeld = false;
-            if (rightBeingHeld) transform.Rotate(0f, 0f, -0.5f);
+            if (rightBeingHeld) transform.Rotate(0f, 0f, -0.8f);
 
             if (Input.mousePosition.x > Screen.width - CameraHandler.edgeScreen || Input.mousePosition.x < CameraHandler.edgeScreen)
             {
@@ -75,6 +76,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Destroy(particle, 1f);
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (Math.Abs((tempPosition.x + 360) - (rectTransform.anchoredPosition.x + 360)) > 50 || Math.Abs((tempPosition.y + 360) - (rectTransform.anchoredPosition.y + 360)) > 50) particleCreateAndDestroy();
@@ -102,7 +104,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         OnDragHandler?.Invoke(eventData);
         if (followCursor)
         {
-            rectTransform.anchoredPosition += eventData.delta / (0.75f / (965f / Screen.width));
+            rectTransform.anchoredPosition += eventData.delta / (0.75f / screenScale);
             tempPosition = rectTransform.anchoredPosition;
         }
     }
@@ -115,7 +117,6 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
-        particleCreateAndDestroy();
         OnEndDragHandler?.Invoke(eventData, false);
         leftBeingHeld = false;
 
@@ -148,6 +149,8 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             {
                 rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 canDrag = false;
+                StartCoroutine(Waiter());
+
                 return;
             }
         }
@@ -155,4 +158,19 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rigidbody2D.gravityScale = 150f;
 
     }
+
+    IEnumerator Waiter()
+    {
+        gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+        for (float i = 1; i < 1.25f; i += 0.01f)
+        {
+            gameObject.GetComponent<RectTransform>().localScale = new Vector3(i, i, i);
+            yield return new WaitForSeconds(0.003f);
+
+        }
+        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        particleCreateAndDestroy();
+    }
+
 }

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4369783591779194202}
   - component: {fileID: 8127950869927969590}
   m_Layer: 0
-  m_Name: CandiBlock
+  m_Name: CandiRectangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 3600
+  m_Mass: 3200
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 150
