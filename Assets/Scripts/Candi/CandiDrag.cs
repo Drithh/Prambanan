@@ -29,7 +29,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private bool rightBeingHeld = false;
 
     public bool horizontalState;
-    private float groundY = -220f;
+    private float groundY = -226f;
     private float screenScale = (965f / Screen.width);
     private void Awake()
     {
@@ -64,7 +64,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         if (rectTransform.anchoredPosition.y < (groundY - 1))
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, groundY);
+            //rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, groundY);
         }
 
     }

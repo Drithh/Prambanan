@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-
-    [Header("Camera")]
     private float speed = 1000f;
 
-    public static Vector3 camPos;
     public static readonly float edgeScreen = 120f;
-
+    public static Vector3 camPos;
 
     void Update()
     {
         Move();
-
-        if (camPos.x != 0) transform.position = camPos;
         camPos = transform.position;
-
     }
 
     void Move()
@@ -29,8 +23,7 @@ public class CameraHandler : MonoBehaviour
             float mousePosRightSide = (Screen.width - Input.mousePosition.x);
             if (mousePosRightSide > -1)
             {
-                if (camPos.x < 640) camPos.x += speed * 100 / (mousePosRightSide > 15 ? mousePosRightSide : 15) * Time.deltaTime;
-                else if (camPos.x > 640) camPos.x = 640;
+                transform.position = new Vector3 (Mathf.Clamp(transform.position.x + (speed * 100 / (mousePosRightSide > 15 ? mousePosRightSide : 15) * Time.deltaTime) , -640, 640) , transform.position.y, transform.position.z);
             }
         }
 
@@ -38,8 +31,7 @@ public class CameraHandler : MonoBehaviour
         {
             if(Input.mousePosition.x > -1)
             {
-                if (camPos.x > -640) camPos.x -= speed * 100 / (Input.mousePosition.x > 15 ? Input.mousePosition.x : 15) * Time.deltaTime;
-                else if (camPos.x < -640) camPos.x = -640;
+                transform.position = new Vector3 (Mathf.Clamp(transform.position.x - (speed * 100 / (Input.mousePosition.x > 15 ? Input.mousePosition.x : 15) * Time.deltaTime) , -640, 640), transform.position.y, transform.position.z);
             }
         }
 
