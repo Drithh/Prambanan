@@ -12,9 +12,10 @@ public class GuideLine : MonoBehaviour
 
 	private bool guideSpawned = false;
 
-    private void Start()
+	private void Start()
     {
 		gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
+		gameObject.GetComponent<Image>().material = Resources.Load("Materials/LightEffect") as Material;
 	}
 
 	protected virtual void Awake()

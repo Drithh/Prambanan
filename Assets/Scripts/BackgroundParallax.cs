@@ -14,7 +14,7 @@ public class BackgroundParallax : MonoBehaviour
     private void Update()
     {
 
-        distance = CameraHandler.camPos.x * parallaxEffect;
+        distance = Camera.main.GetComponent<Camera>().transform.position.x * parallaxEffect;
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
     }
 }

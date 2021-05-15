@@ -29,8 +29,13 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private bool rightBeingHeld = false;
 
     public bool horizontalState;
-    private float groundY = -226f;
-    private float screenScale = (965f / Screen.width);
+    private bool touchedGround = false;
+
+    private int spawnRandom;
+
+    private Vector3 worldMousePos;
+
+
     private void Awake()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -38,33 +43,49 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponentInParent<CanvasGroup>();
+
+        while(spawnRandom == 0) spawnRandom = UnityEngine.Random.Range(-2, 2);
     }
 
     private void Update()
     {
+        float mousePosScaledX = Input.mousePosition.x * GameManager.screenScale;
+        float screenWidthScaled = Screen.width * GameManager.screenScale;
 
         if (leftBeingHeld)
         {
-            if (Input.GetMouseButtonDown(1)) rightBeingHeld = true;
-            else if (Input.GetMouseButtonUp(1)) rightBeingHeld = false;
-            if (rightBeingHeld) transform.Rotate(0f, 0f, -0.8f);
-
-            if (Input.mousePosition.x > Screen.width - CameraHandler.edgeScreen || Input.mousePosition.x < CameraHandler.edgeScreen)
+            if (Input.GetMouseButtonDown(1))
             {
-                Vector2 tempCamPos = CameraHandler.camPos;
-                tempCamPos.y = tempPosition.y;
-                if (Input.mousePosition.x > Screen.width - CameraHandler.edgeScreen) tempCamPos.x += 640 - (Screen.width - Input.mousePosition.x);
-                else tempCamPos.x -= 640 - (Input.mousePosition.x);
-                rectTransform.anchoredPosition = tempCamPos;
+                rightBeingHeld = true;
+            }
+            else if (Input.GetMouseButtonUp(1))
+            {
+                rightBeingHeld = false;
+            }
+            if (rightBeingHeld)
+            {
+                transform.Rotate(0f, 0f, -0.8f);
+            }
+
+            if (mousePosScaledX > screenWidthScaled - CameraHandler.edgeScreen || mousePosScaledX < CameraHandler.edgeScreen)
+            {
+                worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                rectTransform.position = new Vector2(worldMousePos.x, worldMousePos.y);
             }
         }
-        if (rectTransform.anchoredPosition.x > 1200f || rectTransform.anchoredPosition.x < -1200f)
+        if (rectTransform.position.x > 1200f || rectTransform.position.x < -1200f)
         {
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x > 1200f ? 1200f : -1200f, rectTransform.anchoredPosition.y);
+            rectTransform.position = new Vector2(rectTransform.position.x > 1200f ? 1200f : -1200f, rectTransform.position.y);
         }
-        if (rectTransform.anchoredPosition.y < (groundY - 1))
+        if (rectTransform.position.y < -232f)
         {
-            //rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, groundY);
+            rectTransform.position = new Vector2(rectTransform.position.x, rectTransform.position.y + 1f);
+        }
+
+        if(!touchedGround)
+        {
+            rectTransform.Rotate(0, 0, spawnRandom);
+            transform.Translate(Vector3.right * (spawnRandom * 150 * Time.deltaTime));
         }
 
     }
@@ -79,8 +100,9 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Math.Abs((tempPosition.x + 360) - (rectTransform.anchoredPosition.x + 360)) > 50 || Math.Abs((tempPosition.y + 360) - (rectTransform.anchoredPosition.y + 360)) > 50) particleCreateAndDestroy();
-        tempPosition = rectTransform.anchoredPosition;
+        if (Math.Abs((tempPosition.x + 360) - (rectTransform.position.x + 360)) > 50 || Math.Abs((tempPosition.y + 360) - (rectTransform.position.y + 360)) > 50) particleCreateAndDestroy();
+        tempPosition = rectTransform.position;
+        touchedGround = true;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -104,8 +126,9 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         OnDragHandler?.Invoke(eventData);
         if (followCursor)
         {
-            rectTransform.anchoredPosition += eventData.delta / (0.75f / screenScale);
-            tempPosition = rectTransform.anchoredPosition;
+            worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            rectTransform.position = new Vector2(worldMousePos.x, worldMousePos.y);
+            tempPosition = rectTransform.position;
         }
     }
 

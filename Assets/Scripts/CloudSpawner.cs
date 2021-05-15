@@ -42,7 +42,7 @@ public class CloudSpawner : MonoBehaviour
         cloud.transform.SetParent(GameObject.FindGameObjectWithTag("CloudSpawner").transform, false);
 
         cloud.transform.localScale = new Vector2(Random.Range(0.8f, 1.2f), Random.Range(0.8f, 1.2f));
-        cloud.GetComponent<CloudSpeed>().startSpawn(speed);
+        cloud.GetComponent<CloudObject>().startSpawn(speed);
 
     }
 

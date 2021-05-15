@@ -7,32 +7,35 @@ public class CameraHandler : MonoBehaviour
     private float speed = 50f;
     private float mousePosSide;
     public static readonly float edgeScreen = 120f;
-    public static Vector3 camPos;
 
     void Update()
     {
         Move();
-        camPos = transform.position;
     }
 
     void Move()
     {
+        float mousePosScaledX = Input.mousePosition.x * GameManager.screenScale;
+        float screenWidthScaled = Screen.width * GameManager.screenScale;
 
-        if (Input.mousePosition.x > Screen.width - edgeScreen)
+        // Kekanan
+        if (mousePosScaledX > screenWidthScaled - edgeScreen)
         {
-            mousePosSide = edgeScreen - (Screen.width - Input.mousePosition.x);
+            mousePosSide = edgeScreen - (screenWidthScaled - mousePosScaledX);
             if (mousePosSide < 120)
             {
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x + (speed * (mousePosSide > 80 ? 80 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x + (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
             }
         }
 
-        if (Input.mousePosition.x < edgeScreen)
+
+        // Kekiri
+        if (mousePosScaledX < edgeScreen)
         {
-            mousePosSide = (edgeScreen - Input.mousePosition.x);
+            mousePosSide = (edgeScreen - mousePosScaledX);
             if (mousePosSide < 120)
             {
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x - (speed * (mousePosSide > 80 ? 80 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x - (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
             }
         }
     }
