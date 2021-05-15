@@ -40,9 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Candi
-    uniqueID: 3303497353
+  - name: Background
+    uniqueID: 1713739245
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Candi
+    uniqueID: 3303497353
     locked: 0

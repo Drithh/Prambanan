@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    private float speed = 1000f;
-
+    private float speed = 50f;
+    private float mousePosSide;
     public static readonly float edgeScreen = 120f;
     public static Vector3 camPos;
 
@@ -20,22 +20,21 @@ public class CameraHandler : MonoBehaviour
 
         if (Input.mousePosition.x > Screen.width - edgeScreen)
         {
-            float mousePosRightSide = (Screen.width - Input.mousePosition.x);
-            if (mousePosRightSide > -1)
+            mousePosSide = edgeScreen - (Screen.width - Input.mousePosition.x);
+            if (mousePosSide < 120)
             {
-                transform.position = new Vector3 (Mathf.Clamp(transform.position.x + (speed * 100 / (mousePosRightSide > 15 ? mousePosRightSide : 15) * Time.deltaTime) , -640, 640) , transform.position.y, transform.position.z);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x + (speed * (mousePosSide > 80 ? 80 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
             }
         }
 
         if (Input.mousePosition.x < edgeScreen)
         {
-            if(Input.mousePosition.x > -1)
+            mousePosSide = (edgeScreen - Input.mousePosition.x);
+            if (mousePosSide < 120)
             {
-                transform.position = new Vector3 (Mathf.Clamp(transform.position.x - (speed * 100 / (Input.mousePosition.x > 15 ? Input.mousePosition.x : 15) * Time.deltaTime) , -640, 640), transform.position.y, transform.position.z);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x - (speed * (mousePosSide > 80 ? 80 : mousePosSide) * Time.deltaTime), -640f, 640f), transform.position.y, transform.position.z);
             }
         }
-
     }
-
 
 }
