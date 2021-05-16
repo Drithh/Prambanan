@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: 7d00da3b5183ebe4bb52bfeb87f3082e
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 06fbdae4f7bb24b4e8fc2dbc9d489479
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 7d00da3b5183ebe4bb52bfeb87f3082e
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 5091ef05ff8e2bd43a565cc19853ac8c
   - enabled: 1
-    path: Assets/Scenes/WinLose.unity
+    path: Assets/Scenes/WinLoseMenu.unity
     guid: 7a3e8d7d2cb9c0548b28927c879a2b24
+  - enabled: 1
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: be1e6fa15b7ffc54baf906c9b454464c
   - enabled: 1
     path: Assets/Scenes/Prambanan1.unity
     guid: 2cda990e2423bbf4892e6590ba056729

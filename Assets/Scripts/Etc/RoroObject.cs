@@ -19,6 +19,7 @@ public class RoroObject : MonoBehaviour
     public static float maxTime;
     private float timeKill;
     private float timeBlink;
+    private bool askedToLose;
 
     private void Start()
     {
@@ -42,6 +43,11 @@ public class RoroObject : MonoBehaviour
         if (Time.time > timeKill)
         {
             StartCoroutine(DestroyObj());
+            if (!askedToLose)
+            {
+                askedToLose = true;
+                GameSceneManager.RoundLose();
+            }
         }
         if (!gravityChanged)
         {

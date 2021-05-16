@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BackgroundParallax : MonoBehaviour
 {
-    private float startPos, distance;
+    private float startPosX, startPosY, distanceX, distanceY;
     public float parallaxEffect;
 
     private void Start()
     {
-        startPos = transform.position.x;
+        startPosX = transform.position.x;
+        startPosY = transform.position.y;
+
     }
     private void Update()
     {
-
-        distance = Camera.main.GetComponent<Camera>().transform.position.x * parallaxEffect;
-        transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
+        distanceX = Camera.main.GetComponent<Camera>().transform.position.x * parallaxEffect;
+        distanceY = Camera.main.GetComponent<Camera>().transform.position.y * parallaxEffect;
+        transform.position = new Vector3(startPosX + distanceX, startPosY + distanceY, transform.position.z);
     }
 }

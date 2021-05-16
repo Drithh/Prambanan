@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6813353930185512950}
   - component: {fileID: 6813353930185512951}
   - component: {fileID: 6813353930185512948}
-  - component: {fileID: 6813353930185512712}
+  - component: {fileID: 6766543148336179954}
   m_Layer: 5
-  m_Name: WinCanvas
+  m_Name: WinLoseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 6813353930985358595}
+  - {fileID: 6813353932081267347}
+  - {fileID: 6813353932149499292}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6813353930185512712
+--- !u!114 &6766543148336179954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,47 +111,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6813353930185512949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9dddfa1209fe34680a0aaaab1c44b1, type: 3}
+  m_Script: {fileID: 11500000, guid: a67c6685c72bd3a4b986fb0e1d476e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 6813353932149499293}
---- !u!1 &6813353930985358592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6813353930985358595}
-  m_Layer: 0
-  m_Name: PauseMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6813353930985358595
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6813353930985358592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6813353932081267347}
-  - {fileID: 6813353932149499292}
-  m_Father: {fileID: 6813353930185512713}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  spriteArray:
+  - {fileID: 21300000, guid: 578696e6c39185d4a9031c89698f6da0, type: 3}
+  - {fileID: 21300000, guid: 91f6131d0c1563640baa942c88aee1b7, type: 3}
+  - {fileID: 21300000, guid: b771489c0be8d6c4d9060d6c015cba75, type: 3}
+  - {fileID: 21300000, guid: 2eb61738366039b4dbe487c611803dbe, type: 3}
 --- !u!1 &6813353931796193243
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +132,7 @@ GameObject:
   - component: {fileID: 6813353931796193244}
   - component: {fileID: 6813353931796193245}
   m_Layer: 0
-  m_Name: Image
+  m_Name: WinLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,13 +225,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6813353930985358595}
+  m_Father: {fileID: 6813353930185512713}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1180, y: 619.668}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6813353932081267349
 CanvasRenderer:
@@ -348,14 +317,14 @@ RectTransform:
   m_GameObject: {fileID: 6813353932149499293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.8000001, y: 0.8000001, z: 1}
   m_Children:
   - {fileID: 6813353931796193242}
   - {fileID: 6813353931643454541}
   - {fileID: 6813353931502517939}
   - {fileID: 6813353930706481118}
   - {fileID: 6813353930879603432}
-  m_Father: {fileID: 6813353930985358595}
+  m_Father: {fileID: 6813353930185512713}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -481,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 5761046174608567627, guid: 8afac00514ab8fa4b81abfd958f2704f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6813353930185512712}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8afac00514ab8fa4b81abfd958f2704f, type: 3}
 --- !u!224 &6813353930879603432 stripped
@@ -685,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 3276259298577082833, guid: 3614fec6ff622354e9c8c6bd592f9efc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6813353930185512712}
+      objectReference: {fileID: 0}
     - target: {fileID: 3276259298577082835, guid: 3614fec6ff622354e9c8c6bd592f9efc, type: 3}
       propertyPath: m_Name
       value: Levels
@@ -791,7 +760,7 @@ PrefabInstance:
     - target: {fileID: 2390402569850186665, guid: 49b770767d540984bb1b5bddea21b855, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6813353930185512712}
+      objectReference: {fileID: 0}
     - target: {fileID: 2390402569850186671, guid: 49b770767d540984bb1b5bddea21b855, type: 3}
       propertyPath: m_Name
       value: NextLevel

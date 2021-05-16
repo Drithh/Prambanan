@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     float originalY;
     Transform title;
     private float floatStrength = 7;
-
     private void Start()
     {
         title = transform.GetChild(0).GetComponent<Transform>();
@@ -22,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        GameManager.roundWin = true;
+        GameSceneManager.nextLevel = true;
     }
 
     public void Exit()
@@ -38,7 +37,7 @@ public class MainMenu : MonoBehaviour
 
         for (int i = 1; i < 4; i++)
         {
-            Transform menuButton = transform.GetChild(i).GetComponent<Transform>();
+            Transform menuButton = transform.GetChild(i).GetComponent<Transform>(); 
             StartCoroutine(AnimateButton(menuButton));
             yield return new WaitForSecondsRealtime(0.5f);
         }

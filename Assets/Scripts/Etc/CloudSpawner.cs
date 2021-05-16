@@ -32,7 +32,7 @@ public class CloudSpawner : MonoBehaviour
             speed = Random.Range(-3, 3) * 10;
         } while (speed == 0);
 
-        Vector3 whereCloudSpawn = new Vector3(cloudPosX, Random.Range(2f, 3f), 1);
+        Vector3 whereCloudSpawn = new Vector3(cloudPosX, Random.Range(2f, 6f), 1);
         if (speed > 0 && whereCloudSpawn.x > 0)
         {
             whereCloudSpawn.x *= -1f;

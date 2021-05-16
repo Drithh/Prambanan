@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void Resume()
+    public virtual void Resume()
     {
         StartCoroutine(ExitUi());
         Time.timeScale = 1f;
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Levels()
     {
-        GameManager.askLevels = true;
+        GameSceneManager.askLevels = true;
     }
 
     public void Exit()

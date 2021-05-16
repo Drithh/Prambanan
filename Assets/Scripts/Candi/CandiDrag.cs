@@ -49,8 +49,8 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void Update()
     {
-        float mousePosScaledX = Input.mousePosition.x * GameManager.screenScale;
-        float screenWidthScaled = Screen.width * GameManager.screenScale;
+        float mousePosScaledX = Input.mousePosition.x * GameSceneManager.screenScale;
+        float screenWidthScaled = Screen.width * GameSceneManager.screenScale;
 
         if (leftBeingHeld)
         {
@@ -95,12 +95,14 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         GameObject particle = Instantiate(candiParticle, transform.position, candiParticle.transform.rotation) as GameObject;
         particle.GetComponent<ParticleSystem>().Play();
         Destroy(particle, 1f);
+        StartCoroutine(PlayAudio());
+
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Math.Abs((tempPosition.x + 360) - (rectTransform.position.x + 360)) > 50 || Math.Abs((tempPosition.y + 360) - (rectTransform.position.y + 360)) > 50) particleCreateAndDestroy();
+        if (Math.Abs((tempPosition.x + 360) - (rectTransform.position.x + 360)) > 200 || Math.Abs((tempPosition.y + 360) - (rectTransform.position.y + 360)) > 200) particleCreateAndDestroy();
         tempPosition = rectTransform.position;
         touchedGround = true;
     }
@@ -180,6 +182,15 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         rigidbody2D.gravityScale = 150f;
 
+    }
+
+    IEnumerator PlayAudio()
+    {
+        AudioSource audio = transform.GetComponent<AudioSource>();
+        audio.clip = Resources.Load("Audio/Stone" + UnityEngine.Random.Range(1, 5).ToString(), typeof(AudioClip)) as AudioClip;
+        audio.volume = 0.5f;
+        audio.Play();
+        yield return new WaitForSeconds(0.003f);
     }
 
     IEnumerator Waiter()

@@ -15,7 +15,7 @@ public class GuideLine : MonoBehaviour
 	private void Start()
     {
 		gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
-		gameObject.GetComponent<Image>().material = Resources.Load("Materials/LightEffect") as Material;
+		gameObject.GetComponent<Image>().material = Resources.Load("/LightEffect") as Material;
 	}
 
 	protected virtual void Awake()

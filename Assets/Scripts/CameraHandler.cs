@@ -15,8 +15,28 @@ public class CameraHandler : MonoBehaviour
 
     void Move()
     {
-        float mousePosScaledX = Input.mousePosition.x * GameManager.screenScale;
-        float screenWidthScaled = Screen.width * GameManager.screenScale;
+        float mousePosScaledX = Input.mousePosition.x * GameSceneManager.screenScale;
+        float mousePosScaledY = Input.mousePosition.y * GameSceneManager.screenScale;
+        float screenWidthScaled = Screen.width * GameSceneManager.screenScale;
+        float screenHeightScaled = Screen.height * GameSceneManager.screenScale;
+
+        if (mousePosScaledY > screenHeightScaled - edgeScreen)
+        {
+            mousePosSide = edgeScreen - (screenHeightScaled - mousePosScaledY);
+            if (mousePosSide < 120)
+            {
+                transform.position = new Vector3(transform.position.x , Mathf.Clamp(transform.position.y + (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
+            }
+        }
+
+        if (mousePosScaledY < edgeScreen)
+        {
+            mousePosSide = (edgeScreen - mousePosScaledY);
+            if (mousePosSide < 120)
+            {
+                transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
+            }
+        }
 
         // Kekanan
         if (mousePosScaledX > screenWidthScaled - edgeScreen)

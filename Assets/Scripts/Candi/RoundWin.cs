@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class RoundWin : MonoBehaviour
 {
+    private bool askedToWin = false;
+
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("GuideParent") == null)
+        if (GameObject.FindGameObjectWithTag("GuideParent") == null && !askedToWin)
         {
-            GameManager.roundWin = true;
+            askedToWin = true;
+            GameSceneManager.RoundWin();
         }
     }
+
+
 }

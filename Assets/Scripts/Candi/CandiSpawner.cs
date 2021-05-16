@@ -9,7 +9,7 @@ public class CandiSpawner : MonoBehaviour
 
     public static int[] totalSpawnBlock = new int[] { 0, 0 };
 
-    private float spawnRate = 1f;
+    private float spawnRate = 3f;
     private Vector2 whereCandiSpawn;
     private float nextSpawn = 0f;
     private int figureRandomizer;
@@ -19,7 +19,7 @@ public class CandiSpawner : MonoBehaviour
         if (Time.time > nextSpawn && totalSpawnBlock.Sum() > 0)
         {
             nextSpawn = Time.time + spawnRate;
-            whereCandiSpawn = new Vector2(Random.Range(-1200f, 1200f), transform.position.y);
+            whereCandiSpawn = new Vector2(Random.Range(-1200f, 1200f), transform.position.y + 200);
 
             do
             {
@@ -31,4 +31,5 @@ public class CandiSpawner : MonoBehaviour
             spawnedPrefab.transform.SetParent(GameObject.FindGameObjectWithTag("CandiBlock").transform, false);
         }
     }
+
 }

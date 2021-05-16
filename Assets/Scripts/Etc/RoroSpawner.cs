@@ -8,15 +8,17 @@ public class RoroSpawner : MonoBehaviour
     public GameObject roroObject;
 
     private string[] keyArray = { "a", "s", "d", "q", "w", "e" };
-    public static int[] keySummoned = { 0, 0, 0, 0, 0, 0 };
+    public static int[] keySummoned;
     public Sprite[] spriteArray;
 
     public float spawnRate = 1f;
-    private float nextSpawn = 0f;
+    private float nextSpawn;
     int keyRandomizer;
 
-    private void Awake()
+    private void Start()
     {
+        keySummoned =  new int[6] { 0, 0, 0, 0, 0, 0 };
+        nextSpawn = 0f;
         RoroObject.maxTime = spawnRate * 6f;
     }
 
