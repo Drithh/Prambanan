@@ -7,7 +7,7 @@ public class CandiSpawner : MonoBehaviour
 {
     public GameObject[] candiFigure;
 
-    public static int[] totalSpawnBlock = new int[] { 0, 0, 0 };
+    public static int[] totalSpawnBlock = new int[] { 0, 0 };
 
     private float spawnRate = 1f;
     private Vector2 whereCandiSpawn;

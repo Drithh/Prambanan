@@ -7,6 +7,8 @@ TagManager:
   - Canvas
   - CandiBlock
   - CloudSpawner
+  - RoroSpawner
+  - GuideParent
   layers:
   - Default
   - TransparentFX

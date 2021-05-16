@@ -16,10 +16,9 @@ public class CountdownTimer : MonoBehaviour
     private void Update()
     {
         currentTime -= Time.deltaTime;
-        milliseconds = ((float) currentTime % 1) * 100;
+        milliseconds = (currentTime % 1) * 100;
         seconds = ((int) currentTime % 60);
         minutes = (int) (currentTime / 60);
-        //gameObject.GetComponent<Text>().text = minutes.ToString("0").PadLeft(2, '0') + ":" + seconds.ToString("0").PadLeft(2, '0')  + ":" + milliseconds.ToString("0");
         gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = minutes.ToString("0").PadLeft(2, '0') + ":" + seconds.ToString("0").PadLeft(2, '0')  + ":" + milliseconds.ToString("0");
     }
 }

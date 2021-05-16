@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 8325679358904715879}
   m_Layer: 0
   m_Name: Blueprint2
-  m_TagString: Untagged
+  m_TagString: GuideParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

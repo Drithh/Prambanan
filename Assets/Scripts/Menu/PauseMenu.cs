@@ -6,15 +6,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-    
     private CanvasGroup canvasGroup;
 
-    private void Awake()
-    {
-        Pause();
-    }
-
-    private void Pause()
+    public void Pause()
     {
         StartCoroutine(EntranceUI());
         Time.timeScale = 0f;
@@ -22,14 +16,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        StartCoroutine(ExitUi());
         Time.timeScale = 1f;
-        SceneManager.UnloadSceneAsync("PauseMenu");
-        GameManager.gameIsPaused = false;
     }
 
     public void Levels()
     {
-        SceneManager.LoadScene("LevelSelection", LoadSceneMode.Additive);
+        GameManager.askLevels = true;
     }
 
     public void Exit()
@@ -39,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator EntranceUI()
     {
+        gameObject.SetActive(true);
         canvasGroup = pauseMenuUI.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0f;
         for (int locationUI = -570; locationUI < 20 ; locationUI += 10)
@@ -51,6 +45,17 @@ public class PauseMenu : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.008f);
         }
         pauseMenuUI.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    IEnumerator ExitUi()
+    {
+        while (pauseMenuUI.GetComponent<CanvasGroup>().alpha > 0)
+        {
+            pauseMenuUI.GetComponent<CanvasGroup>().alpha -= 0.1f;
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
+        gameObject.SetActive(false);
+
     }
 }
 
