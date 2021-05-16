@@ -606,6 +606,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4020149687650584535}
     m_Modifications:
+    - target: {fileID: 1549174806444800791, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4020149686827464003}
+    - target: {fileID: 1549174806444800791, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Options
+      objectReference: {fileID: 0}
     - target: {fileID: 1549174806444800792, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

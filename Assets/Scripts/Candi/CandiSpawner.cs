@@ -7,12 +7,25 @@ public class CandiSpawner : MonoBehaviour
 {
     public GameObject[] candiFigure;
 
-    public static int[] totalSpawnBlock = new int[] { 0, 0 };
+    public static int[] totalSpawnBlock;
+    public static int totalSpawnAllBlock;
+
 
     private float spawnRate = 3f;
     private Vector2 whereCandiSpawn;
     private float nextSpawn = 0f;
     private int figureRandomizer;
+
+    private void Awake()
+    {
+        totalSpawnBlock = new int[] { 0, 0 };
+    }
+
+    private void Start()
+    {
+        totalSpawnAllBlock = totalSpawnBlock.Sum();
+        spawnRate = 6 / GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel;
+    }
 
     void Update()
     {

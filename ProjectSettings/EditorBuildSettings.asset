@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 06fbdae4f7bb24b4e8fc2dbc9d489479
-  - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: 7d00da3b5183ebe4bb52bfeb87f3082e
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 06fbdae4f7bb24b4e8fc2dbc9d489479
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 5091ef05ff8e2bd43a565cc19853ac8c
@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prambanan2.unity
     guid: ab0b5eda929dac742ab6d31b7aa6c837
+  - enabled: 1
+    path: Assets/Scenes/Prambanan3.unity
+    guid: d070ef4c2362ef844b0005b1071f1e82
+  - enabled: 1
+    path: Assets/Scenes/Prambanan4.unity
+    guid: e1b1ab6211c3afd4d97b0dd89f653ca0
   m_configObjects: {}

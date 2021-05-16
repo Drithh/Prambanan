@@ -31,11 +31,16 @@ public class GameSceneManager : MonoBehaviour
         pauseObject.SetActive(false);
 
         // Load Menu
-        StartCoroutine(SceneLoader(0));
+        StartCoroutine(SceneLoader(1));
     }
 
     void Update()
     {
+        if(askOptions)
+        {
+            SceneManager.LoadScene("OptionsMenu", LoadSceneMode.Additive);
+            askOptions = false;
+        }
         if(askLevels)
         {
             SceneManager.LoadScene("LevelSelection", LoadSceneMode.Additive);
@@ -44,8 +49,7 @@ public class GameSceneManager : MonoBehaviour
 
         if (nextLevel)
         {
-            Application.Quit();
-            playerLevel++;
+            if (playerLevel == 0) playerLevel++;
             LoadLevel(playerLevel + 4);
             nextLevel = false;
         }

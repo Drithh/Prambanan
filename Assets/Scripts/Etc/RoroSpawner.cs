@@ -11,7 +11,7 @@ public class RoroSpawner : MonoBehaviour
     public static int[] keySummoned;
     public Sprite[] spriteArray;
 
-    public float spawnRate = 1f;
+    public float spawnRate;
     private float nextSpawn;
     int keyRandomizer;
 
@@ -19,6 +19,8 @@ public class RoroSpawner : MonoBehaviour
     {
         keySummoned =  new int[6] { 0, 0, 0, 0, 0, 0 };
         nextSpawn = 0f;
+        spawnRate = 16 / Mathf.Pow(GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel, 2);
+
         RoroObject.maxTime = spawnRate * 6f;
     }
 

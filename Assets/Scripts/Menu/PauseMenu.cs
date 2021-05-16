@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     private CanvasGroup canvasGroup;
 
+
+
     public void Pause()
     {
         StartCoroutine(EntranceUI());
@@ -23,6 +25,11 @@ public class PauseMenu : MonoBehaviour
     public void Levels()
     {
         GameSceneManager.askLevels = true;
+    }
+
+    public void Options()
+    {
+        GameSceneManager.askOptions = true;
     }
 
     public void Exit()

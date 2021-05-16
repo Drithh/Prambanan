@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
         title.position = new Vector3(transform.position.x, originalY + ((float)Mathf.Sin(Time.time) * floatStrength), transform.position.z);
     }
 
+    public void Options()
+    {
+        GameSceneManager.askOptions = true;
+    }
+
     public void Play()
     {
         GameSceneManager.nextLevel = true;

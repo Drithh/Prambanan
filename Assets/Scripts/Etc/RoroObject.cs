@@ -30,6 +30,7 @@ public class RoroObject : MonoBehaviour
         rectTransform = gameObject.GetComponent<RectTransform>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
 
+
         StartCoroutine(Entrance());
     }
 

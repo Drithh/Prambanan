@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3630968486669627652, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6813353930185512713, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -218,6 +222,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6813353930706481118, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813353930879603432, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6813353930879603435, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -238,6 +250,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PauseMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6813353931502517939, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6813353931643454540, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -249,6 +265,14 @@ PrefabInstance:
     - target: {fileID: 6813353931643454540, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: WinLoseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813353931643454541, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813353931796193242, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f7532b7a61f8448a91b6e78ae77d1d, type: 3}
