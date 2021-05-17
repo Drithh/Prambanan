@@ -50,6 +50,7 @@ public class RoroSpawner : MonoBehaviour
 
         roros.transform.SetParent(GameObject.FindGameObjectWithTag("RoroSpawner").transform, false);
         roros.transform.SetSiblingIndex(0);
+        roro.transform.GetComponent<AudioSource>().panStereo = spawnRandomizer == 1 ? -0.7f : 0.7f;
 
         roros.Keyrandomized = keyRandomizer;
         roros.destroyKey = key;

@@ -267,9 +267,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1552684099}
   - {fileID: 556060357}
   - {fileID: 75269594}
-  - {fileID: 1552684099}
   - {fileID: 2132833871}
   - {fileID: 949405724}
   m_Father: {fileID: 394076631}
@@ -562,6 +562,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2132833871}
     m_Modifications:
+    - target: {fileID: 431291970, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 13a446cdce5b3354ab3755b54c3dc269, type: 2}
     - target: {fileID: 4882091803182768336, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -648,7 +652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7664246709981173380, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_Name
-      value: Blueprint1
+      value: Blueprint1s
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664246709981173380, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
@@ -1276,7 +1284,7 @@ RectTransform:
   - {fileID: 1883036060}
   - {fileID: 190587731}
   m_Father: {fileID: 230691976}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1959,6 +1967,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f6f43cb3e14c941bcf0f6fce737764, type: 3}
+--- !u!1 &5376202857821346354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4433758468595929570, guid: 81f6f43cb3e14c941bcf0f6fce737764, type: 3}
+  m_PrefabInstance: {fileID: 5376202857821346353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &5376202857821346355
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376202857821346354}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &5826694234035230656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1972,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826694234094178842, guid: 09e26f0a65be5b045b44cf24cf38a9b9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5826694234094178842, guid: 09e26f0a65be5b045b44cf24cf38a9b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2025,7 +2050,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3432677684968188566, guid: 6b6b868f3764be44ebe22f3d1352487d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3432677684968188566, guid: 6b6b868f3764be44ebe22f3d1352487d, type: 3}
       propertyPath: m_LocalPosition.x

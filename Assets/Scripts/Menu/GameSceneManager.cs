@@ -20,6 +20,7 @@ public class GameSceneManager : MonoBehaviour
 
     public static int playerLevel = 0;
     public static int askedLevel;
+    public static Resolution lastResolution;
 
     private void Awake()
     {
@@ -27,14 +28,15 @@ public class GameSceneManager : MonoBehaviour
         pauseObject = Instantiate(pauseObject);
         pauseMenu = pauseObject.GetComponent<Canvas>();
         pauseObject.SetActive(false);
-
+        lastResolution = Screen.currentResolution;
         // Load Menu
         StartCoroutine(SceneLoader(1));
     }
 
     void Update()
     {
-        if(askOptions)
+
+        if (askOptions)
         {
             SceneManager.LoadScene("OptionsMenu", LoadSceneMode.Additive);
             askOptions = false;
@@ -63,9 +65,20 @@ public class GameSceneManager : MonoBehaviour
             closePauseMenu();
             askAllUIClose = false;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && playerLevel != 0 && (!SceneManager.GetSceneByName("WinLoseMenu").isLoaded))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseMenu();
+            if (SceneManager.GetSceneByName("LevelSelection").isLoaded)
+            {
+                LevelSelection.levelSelectionExit = true;
+            }
+            else if (SceneManager.GetSceneByName("OptionsMenu").isLoaded)
+            {
+                OptionsMenu.optionsMenuExit = true;
+            }
+            else if (!SceneManager.GetSceneByName("WinLoseMenu").isLoaded)
+            {
+                PauseMenu();
+            }
         }
     }
 
@@ -104,18 +117,8 @@ public class GameSceneManager : MonoBehaviour
     {
         if (gameIsPaused)
         {
-            if (SceneManager.GetSceneByName("LevelSelection").isLoaded)
-            {
-                levelObject.GetComponent<LevelSelection>().Exit();
-            }
-            else
-            {
-                if (gameIsPaused)
-                {
-                    pauseObject.GetComponent<PauseMenu>().Resume();
-                    gameIsPaused = false;
-                }
-            }
+            pauseObject.GetComponent<PauseMenu>().Resume();
+            gameIsPaused = false;
         }
         else
         {
@@ -128,7 +131,7 @@ public class GameSceneManager : MonoBehaviour
     public static void RoundWin()
     {
         SceneManager.LoadScene("WinLoseMenu", LoadSceneMode.Additive);
-        playerLevel++;
+        if (playerLevel + 4 <= SceneManager.GetActiveScene().buildIndex) playerLevel++;
         if (playerLevel == 6) playerLevel--;
         WinLoseMenu.condition = 1;
     }

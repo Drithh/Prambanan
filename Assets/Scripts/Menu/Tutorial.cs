@@ -26,12 +26,13 @@ public class Tutorial : MonoBehaviour
     private int lastIndexer = -1;
     private bool exited;
     private float currentMoonLight;
+    private bool instructionClosed;
 
     void Awake()
     {
         roro        = GameObject.Find("RoroSpawner");
         timer       = GameObject.Find("Timer");
-        blueprint1  = GameObject.Find("Blueprint1");
+        blueprint1  = GameObject.Find("Blueprint1s");
         redSide     = GameObject.Find("RedSide");
         tutorialCandi = GameObject.Find("TutorialCandi");
         candiSpawner = GameObject.Find("CandiSpawner");
@@ -55,11 +56,12 @@ public class Tutorial : MonoBehaviour
         roro.SetActive(false);
         timer.SetActive(false);
 
+        StartCoroutine(OpenInstruction());
     }
 
     void Update()
     {
-        if (lastIndexer != indexer && indexer < spriteArray.Length)
+        if (lastIndexer != indexer && indexer < spriteArray.Length && instructionClosed)
         {
             switch(indexer)
             {
@@ -71,11 +73,9 @@ public class Tutorial : MonoBehaviour
                     roro.SetActive(true);
                     break;
                 case 5:
-                    timer.SetActive(true);
+                    StartCoroutine(EnableEnemy());
                     break;
                 case 6:
-                    candiSpawner.SetActive(true);
-                    blueprint1.SetActive(true);
                     StartCoroutine(ChangeMoonLight());
                     break;
             }
@@ -84,13 +84,53 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+    public void CloseInstructionButton()
+    {
+        instructionClosed = true;
+        StartCoroutine(CloseInstruction());
+    }
+
     public void ExitUI()
     {
         StartCoroutine(ExitTutorialAnim());
         exited = true;
     }
 
+    IEnumerator EnableEnemy()
+    {
+        candiSpawner.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.1f);
+        blueprint1.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.1f);
+        timer.SetActive(true);
+    }
 
+
+    IEnumerator OpenInstruction()
+    {
+        Time.timeScale = 0f;
+        Transform instruction = transform.GetChild(2);
+        for (float scaleUI = 0; scaleUI < 0.9f; scaleUI += 0.09f)
+        {
+            instruction.GetComponent<CanvasGroup>().alpha += 0.1f;
+            instruction.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+        instruction.localScale = new Vector3(0.85f, 0.85f, 0.85f);
+        instruction.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+    }
+
+    IEnumerator CloseInstruction()
+    {
+        Transform instruction = transform.GetChild(2);
+        for (float scaleUI = 0.8f; scaleUI > 0f; scaleUI -= 0.08f)
+        {
+            instruction.GetComponent<CanvasGroup>().alpha -= 0.1f;
+            instruction.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+        Time.timeScale = 1f;
+    }
 
     IEnumerator RedSideBlink()
     {
@@ -101,9 +141,9 @@ public class Tutorial : MonoBehaviour
             while (redOpacity.alpha > 0)
             {
                 redOpacity.alpha -= 0.1f;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSecondsRealtime(0.1f);
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSecondsRealtime(0.5f);
             if(cameraHandler.transform.position != new Vector3(0, 0, -90))
             {
                 redSide.SetActive(false);
@@ -112,7 +152,7 @@ public class Tutorial : MonoBehaviour
             while (redOpacity.alpha < 1)
             {
                 redOpacity.alpha += 0.1f;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSecondsRealtime(0.1f);
             }
         } 
 
@@ -124,7 +164,7 @@ public class Tutorial : MonoBehaviour
         while (moonLight.pointLightOuterRadius > currentMoonLight)
         {
             moonLight.pointLightOuterRadius -= 1;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
         Destroy(gameObject);
         
@@ -137,7 +177,7 @@ public class Tutorial : MonoBehaviour
         {
             tutorialCandi.GetComponent<CanvasGroup>().alpha -= 0.1f;
             tutorialCandi.transform.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
         Destroy(tutorialCandi);
     }
@@ -170,10 +210,10 @@ public class Tutorial : MonoBehaviour
         {
             GetComponent<CanvasGroup>().alpha += 0.1f;
             transform.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
         transform.localScale = new Vector3(1f, 1f, 1f);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSecondsRealtime(6f);
         if(exited)
         {
             exited = false;
@@ -190,9 +230,9 @@ public class Tutorial : MonoBehaviour
         while (GetComponent<CanvasGroup>().alpha > 0)
         {
             GetComponent<CanvasGroup>().alpha -= 0.1f;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSecondsRealtime(0.05f);
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSecondsRealtime(4f);
         indexer++;
     }
     

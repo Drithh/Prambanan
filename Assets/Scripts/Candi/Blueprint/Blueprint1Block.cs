@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class Blueprint1Block : MonoBehaviour
@@ -10,14 +11,16 @@ public class Blueprint1Block : MonoBehaviour
     public int[] totalCandi;
     private bool transitionAsked = false;
 
-    void Start()
+    private void Start()
     {
         CandiSpawner.totalSpawnBlock[0] += totalCandi[0];
         CandiSpawner.totalSpawnBlock[1] += totalCandi[1];
+        CandiSpawner.totalSpawnAllBlock += totalCandi[0] + totalCandi[1];
     }
 
     private void Update()
     {
+
         Transform child = transform.GetChild(0);
 
         if (!child.CompareTag("GuideParent") && !transitionAsked)

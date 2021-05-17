@@ -392,10 +392,10 @@ AudioSource:
   m_GameObject: {fileID: 4020149688016119297}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 13a446cdce5b3354ab3755b54c3dc269, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e778cce194f7c043850dabcea744329, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -488,10 +488,10 @@ AudioSource:
   m_GameObject: {fileID: 4020149688160247035}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 13a446cdce5b3354ab3755b54c3dc269, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e778cce194f7c043850dabcea744329, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1004,6 +1004,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options
       objectReference: {fileID: 0}
+    - target: {fileID: 8740172170621932723, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740172170621932723, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 13a446cdce5b3354ab3755b54c3dc269, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcd4ac9376fcad54aab8e3c017172390, type: 3}
 --- !u!224 &4020149686274018709 stripped
@@ -1023,6 +1031,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4020149687650584535}
     m_Modifications:
+    - target: {fileID: 5062026007119434237, guid: 8afac00514ab8fa4b81abfd958f2704f, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062026007119434237, guid: 8afac00514ab8fa4b81abfd958f2704f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5761046174608567624, guid: 8afac00514ab8fa4b81abfd958f2704f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

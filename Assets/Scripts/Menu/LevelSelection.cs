@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LevelSelection : MonoBehaviour
 {
     public GameObject levelMenuUI;
-
+    public static bool levelSelectionExit = false;
 
     private CanvasGroup canvasGroup;
 
@@ -17,6 +17,15 @@ public class LevelSelection : MonoBehaviour
         for (int i = 0; i < GameSceneManager.playerLevel; i++)
         {
             transform.GetChild(0).GetChild(1).GetChild(i + 2).GetComponent<Button>().interactable = true;
+        }
+    }
+
+    private void Update()
+    {
+        if(levelSelectionExit)
+        {
+            Exit();
+            levelSelectionExit = false;
         }
     }
 

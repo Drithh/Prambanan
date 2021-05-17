@@ -7,16 +7,17 @@ public class MainMenu : MonoBehaviour
     float originalY;
     Transform title;
     private float floatStrength = 7;
+
     private void Start()
     {
         title = transform.GetChild(0).GetComponent<Transform>();
-        originalY = title.position.y;
+        originalY = title.localPosition.y;
         StartCoroutine(AnimateMenu());
     }
 
     private void Update()
     {
-        title.position = new Vector3(transform.position.x, originalY + ((float)Mathf.Sin(Time.time) * floatStrength), transform.position.z);
+        title.localPosition = new Vector3(title.localPosition.x, originalY + ((float)Mathf.Sin(Time.time) * floatStrength), title.localPosition.z);
     }
 
     public void Options()
@@ -31,6 +32,7 @@ public class MainMenu : MonoBehaviour
 
     public void Exit()
     {
+        Debug.Log("asda");
         Application.Quit();
     }
 

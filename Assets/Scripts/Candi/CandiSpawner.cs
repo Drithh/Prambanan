@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class CandiSpawner : MonoBehaviour
@@ -18,12 +19,12 @@ public class CandiSpawner : MonoBehaviour
 
     private void Awake()
     {
+        totalSpawnAllBlock = 0; 
         totalSpawnBlock = new int[2] { 0, 0 };
     }
 
     private void Start()
     {
-        StartCoroutine(SetTotal());
         spawnRate = 5 / GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel;
     }
 
@@ -43,12 +44,6 @@ public class CandiSpawner : MonoBehaviour
             GameObject spawnedPrefab = Instantiate(candiFigure[figureRandomizer], whereCandiSpawn, Quaternion.identity);
             spawnedPrefab.transform.SetParent(GameObject.FindGameObjectWithTag("CandiBlock").transform, false);
         }
-    }
-
-    IEnumerator SetTotal()
-    {
-        yield return new WaitForSeconds(1f);
-        totalSpawnAllBlock = totalSpawnBlock.Sum();
     }
 
 }

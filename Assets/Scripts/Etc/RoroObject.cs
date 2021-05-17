@@ -97,6 +97,7 @@ public class RoroObject : MonoBehaviour
 
     IEnumerator Entrance()
     {
+        GetComponent<AudioSource>().Play();
         canvasGroup.alpha = 0.8f;
         for (float i = 0f; i < 1.21f; i += 0.1f)
         {
