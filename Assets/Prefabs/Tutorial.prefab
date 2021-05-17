@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5376202857735108962}
   - component: {fileID: 5376202857735108965}
+  - component: {fileID: 190587733}
   m_Layer: 0
   m_Name: Tutorial
   m_TagString: Untagged
@@ -265,3 +266,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 20d2115fc765dc04cb7ff339b878b45f, type: 3}
   - {fileID: 21300000, guid: 79bf8f8599e3456409035d623ba7f3af, type: 3}
   - {fileID: 21300000, guid: 2b626730f89f3964cb68a8c6687d0032, type: 3}
+--- !u!225 &190587733
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376202857735108963}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

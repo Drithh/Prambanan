@@ -52,6 +52,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         float mousePosScaledX = Input.mousePosition.x * GameSceneManager.screenScale;
         float screenWidthScaled = Screen.width * GameSceneManager.screenScale;
 
+
         if (leftBeingHeld)
         {
             if (Input.GetMouseButtonDown(1))
@@ -109,6 +110,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+
         if (!canDrag) return;
 
         canvasGroup.alpha = .5f;

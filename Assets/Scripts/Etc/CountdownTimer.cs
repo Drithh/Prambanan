@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    private float currentTime = 0f;
+    private float currentTime = 600f;
     private float startingTime = 0f;
-    float milliseconds, seconds, minutes;
+    private float milliseconds, seconds, minutes;
     
     private bool askedToLose = false;
     private bool askedRedAlert = false;
@@ -35,6 +35,7 @@ public class CountdownTimer : MonoBehaviour
             if(currentTime < 0 && !askedToLose)
             {
                 askedToLose = true;
+                WinLoseMenu.loseTo = 1;
                 GameSceneManager.RoundLose();
             }
         }
@@ -44,9 +45,15 @@ public class CountdownTimer : MonoBehaviour
     IEnumerator GetTotalTime()
     {
         yield return new WaitForSeconds(0.5f);
-        startingTime = ((CandiSpawner.totalSpawnAllBlock / GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel) * 15);
-        currentTime = startingTime;
-
+        if (CandiSpawner.totalSpawnAllBlock > 0)
+        {
+            startingTime = ((CandiSpawner.totalSpawnAllBlock / GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel) * 15);
+            currentTime = startingTime;
+        }
+        else
+        {
+            startingTime = currentTime;
+        }
     }
 
     IEnumerator TimerAlert()

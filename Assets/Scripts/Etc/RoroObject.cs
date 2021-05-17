@@ -46,6 +46,7 @@ public class RoroObject : MonoBehaviour
             StartCoroutine(DestroyObj());
             if (!askedToLose)
             {
+                WinLoseMenu.loseTo = 0;
                 askedToLose = true;
                 GameSceneManager.RoundLose();
             }

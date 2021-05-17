@@ -10,6 +10,7 @@ TagManager:
   - RoroSpawner
   - GuideParent
   - Game
+  - Blueprint1
   layers:
   - Default
   - TransparentFX

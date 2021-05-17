@@ -10,9 +10,8 @@ public class RoundWin : MonoBehaviour
 
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("GuideParent") == null && !askedToWin)
+        if (GameObject.FindGameObjectWithTag("GuideParent") == null && !askedToWin && !GameObject.Find("Tutorial"))
         {
-            Debug.Log("asdsa");
             askedToWin = true;
             GameSceneManager.RoundWin();
         }

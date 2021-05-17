@@ -7,12 +7,32 @@ public class WinLoseMenu : PauseMenu
 {
     public Sprite[] spriteArray;
     public static int condition;
+    public static int loseTo = -1;
+
     public static bool askExit;
+
+    private Image gameMessage;
+    private Transform gameFinished;
+    private Vector2[] widthHeightImage = new Vector2[] { new Vector2(721, 612), new Vector2(721, 459) };
+
     private void Awake()
     {
         Pause();
         transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = spriteArray[condition];
         transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = spriteArray[condition + 2];
+
+
+        gameMessage = transform.GetChild(1).transform.GetChild(5).GetComponent<Image>();
+        gameFinished = transform.GetChild(1).GetChild(6);
+
+        gameFinished.gameObject.SetActive(false);
+
+        if (loseTo != -1)
+        {
+            StartCoroutine(GameMessage(loseTo));
+            gameFinished.GetComponent<Image>().rectTransform.sizeDelta = widthHeightImage[loseTo];
+            loseTo = -1;
+        }
     }
     private void Update()
     {
@@ -32,7 +52,7 @@ public class WinLoseMenu : PauseMenu
     {
         if(GameSceneManager.playerLevel == 4)
         {
-            GameFinished();
+            StartCoroutine(GameFinished());
         }
         else if (condition == 1)
         {
@@ -47,22 +67,41 @@ public class WinLoseMenu : PauseMenu
 
     IEnumerator GameFinished()
     {
-        Transform gameFinished = transform.GetChild(1).transform.GetChild(5).GetComponent<Image>().transform;
-        gameFinished.GetComponent<CanvasGroup>().alpha = 0f;
         for (float scaleUI = 0; scaleUI < 0.51f; scaleUI += 0.05f)
         {
             gameFinished.GetComponent<CanvasGroup>().alpha += 0.1f;
-            gameFinished.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
+            gameFinished.transform.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
             yield return new WaitForSecondsRealtime(0.01f);
         }
-        gameFinished.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        gameFinished.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         yield return new WaitForSecondsRealtime(2f);
 
-        gameFinished.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        gameFinished.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
 
         while (gameFinished.GetComponent<CanvasGroup>().alpha > 0)
         {
             gameFinished.GetComponent<CanvasGroup>().alpha -= 0.1f;
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
+    }
+
+    IEnumerator GameMessage(int spriteIndex)
+    {
+        gameMessage.sprite = spriteArray[spriteIndex + 4];
+        for (float scaleUI = 0; scaleUI < 0.51f; scaleUI += 0.05f)
+        {
+            gameMessage.GetComponent<CanvasGroup>().alpha += 0.1f;
+            gameMessage.transform.localScale = new Vector3(scaleUI, scaleUI, scaleUI);
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+        gameMessage.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        yield return new WaitForSecondsRealtime(2f);
+
+        gameMessage.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+
+        while (gameMessage.GetComponent<CanvasGroup>().alpha > 0)
+        {
+            gameMessage.GetComponent<CanvasGroup>().alpha -= 0.1f;
             yield return new WaitForSecondsRealtime(0.05f);
         }
     }
