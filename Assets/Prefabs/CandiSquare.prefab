@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 1527642489784510897}
   m_Layer: 0
   m_Name: CandiSquare
-  m_TagString: Untagged
+  m_TagString: Candi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

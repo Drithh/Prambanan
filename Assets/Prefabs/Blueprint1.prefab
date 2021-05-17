@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 65935439}
   - component: {fileID: 65935438}
   m_Layer: 0
-  m_Name: Horizontal (7)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 113821449}
   - component: {fileID: 113821448}
   m_Layer: 0
-  m_Name: Square (6)
+  m_Name: Blueprint1
   m_TagString: GuideParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.9, y: 60}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &113821450
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 260042512}
   - component: {fileID: 260042511}
   m_Layer: 0
-  m_Name: Horizontal (4)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 302664548}
   - component: {fileID: 302664547}
   m_Layer: 0
-  m_Name: Vertical (1)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 379043893}
   - component: {fileID: 379043892}
   m_Layer: 0
-  m_Name: Horizontal (6)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 707915315}
   - component: {fileID: 707915314}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 868083110}
   - component: {fileID: 868083109}
   m_Layer: 0
-  m_Name: Horizontal (5)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 1097921546}
   - component: {fileID: 1097921545}
   m_Layer: 0
-  m_Name: Square (7)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1146161776}
   - component: {fileID: 1146161775}
   m_Layer: 0
-  m_Name: Vertical (2)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 1259657198}
   - component: {fileID: 1259657197}
   m_Layer: 0
-  m_Name: Horizontal (1)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 1367506126}
   - component: {fileID: 1367506125}
   m_Layer: 0
-  m_Name: Square (5)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 1656168018}
   - component: {fileID: 1656168017}
   m_Layer: 0
-  m_Name: Horizontal (2)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 1659242599}
   - component: {fileID: 1659242598}
   m_Layer: 0
-  m_Name: Square (8)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 1850259366}
   - component: {fileID: 1850259365}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 2101642972}
   - component: {fileID: 2101642971}
   m_Layer: 0
-  m_Name: Vertical (3)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,7 +1348,7 @@ GameObject:
   - component: {fileID: 4459466493841495990}
   - component: {fileID: 8270328379020232409}
   m_Layer: 0
-  m_Name: Vertical (4)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,7 +1438,7 @@ GameObject:
   - component: {fileID: 7170388025489381249}
   - component: {fileID: 7662951733002662337}
   m_Layer: 0
-  m_Name: Square (9)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,7 +1526,7 @@ GameObject:
   - component: {fileID: 222345986489378669}
   - component: {fileID: 8036294109014972389}
   m_Layer: 0
-  m_Name: Horizontal (8)
+  m_Name: Blueprint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1611,9 +1611,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4882091803182768336}
   - component: {fileID: 1541836906}
+  - component: {fileID: 5287725739133829400}
+  - component: {fileID: 431291970}
   m_Layer: 0
   m_Name: Blueprint1
-  m_TagString: Untagged
+  m_TagString: Blueprint1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1650,3 +1652,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9378bd8f574db44b5cdc5f180f5338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalCandi: 0b00000007000000
+--- !u!225 &5287725739133829400
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664246709981173380}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!82 &431291970
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664246709981173380}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9d7c50784f451494d88bbf4602b3abdc, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+
+public static class ExtensionMethods
+{
+	public static Transform[] FindChildren(this Transform transform, string name)
+	{
+		return transform.GetComponentsInChildren<Transform>().Where(t => t.name == name).ToArray();
+	}
+}
+
+
 
 public class GuideLine : MonoBehaviour
 {
@@ -10,12 +21,14 @@ public class GuideLine : MonoBehaviour
 	protected bool candiDirectionAsk;
 	protected bool candiDirectionAskState;
 
+	private CandiDrag candiItem;
+
 	private bool guideSpawned = false;
 
 	private void Start()
     {
 		gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
-		gameObject.GetComponent<Image>().material = Resources.Load("/LightEffect") as Material;
+		gameObject.GetComponent<Image>().material = Resources.Load("Material/LightEffect") as Material;
 	}
 
 	protected virtual void Awake()
@@ -23,7 +36,6 @@ public class GuideLine : MonoBehaviour
 		DropArea = GetComponent<CandiArea>() ?? gameObject.AddComponent<CandiArea>();
 		DropArea.OnDropHandler += OnItemDropped;
 	}
-
     private void Update()
     {
 		Transform child = transform.parent.GetChild(0);
@@ -44,8 +56,31 @@ public class GuideLine : MonoBehaviour
 		if ((candiDirectionAsk && candiDirectionAskState != draggable.horizontalState) || child.childCount > 0) return;
 		
 		totalCandi++;
+		candiItem = draggable;
 		draggable.transform.position = transform.position;
+
+		GameObject[] parents = GameObject.FindGameObjectsWithTag("Blueprint1");
+		foreach (GameObject oneParent in parents)
+        {
+			FindAllChildsName(oneParent.transform);
+        }
+
+
 		Destroy(gameObject);
+	}
+
+	private void FindAllChildsName(Transform parent)
+	{
+		foreach (Transform child in parent)
+		{
+			if (child.gameObject.name.Contains(transform.name))
+			{
+                candiItem.transform.SetParent(parent);
+				candiItem.GetComponent<CandiDrag>().enabled = false;
+				break;
+			}
+			FindAllChildsName(child);
+		}
 	}
 
 	IEnumerator Waiter()
@@ -61,3 +96,5 @@ public class GuideLine : MonoBehaviour
 		gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 	}
 }
+
+

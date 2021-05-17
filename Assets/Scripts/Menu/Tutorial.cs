@@ -14,6 +14,7 @@ public class Tutorial : MonoBehaviour
     private GameObject blueprint1;
     private GameObject redSide;
     private GameObject tutorialCandi;
+    private GameObject candiSpawner;
 
     private Transform image;
     private CameraHandler cameraHandler;
@@ -26,14 +27,14 @@ public class Tutorial : MonoBehaviour
     private bool exited;
     private float currentMoonLight;
 
-    void Start()
+    void Awake()
     {
-
         roro        = GameObject.Find("RoroSpawner");
         timer       = GameObject.Find("Timer");
         blueprint1  = GameObject.Find("Blueprint1");
         redSide     = GameObject.Find("RedSide");
         tutorialCandi = GameObject.Find("TutorialCandi");
+        candiSpawner = GameObject.Find("CandiSpawner");
 
         image = gameObject.transform.GetChild(1).transform;
         moonLight = GameObject.Find("MoonLight").GetComponent<Light2D>();
@@ -45,11 +46,11 @@ public class Tutorial : MonoBehaviour
         currentMoonLight = moonLight.pointLightOuterRadius;
         moonLight.pointLightOuterRadius *= 2;
 
-        Debug.Log(cameraHandler.name);
 
         cameraHandler.enabled = false;
 
         redSide.SetActive(false);
+        candiSpawner.SetActive(false);
         blueprint1.SetActive(false);
         roro.SetActive(false);
         timer.SetActive(false);
@@ -73,6 +74,7 @@ public class Tutorial : MonoBehaviour
                     timer.SetActive(true);
                     break;
                 case 6:
+                    candiSpawner.SetActive(true);
                     blueprint1.SetActive(true);
                     StartCoroutine(ChangeMoonLight());
                     break;
@@ -93,9 +95,8 @@ public class Tutorial : MonoBehaviour
     IEnumerator RedSideBlink()
     {
         redSide.SetActive(true);
-        Debug.Log(redSide.activeSelf);
         CanvasGroup redOpacity = redSide.GetComponent<CanvasGroup>();
-        while (cameraHandler.transform.position != new Vector3(0, 0, -90))
+        while (true)
         {
             while (redOpacity.alpha > 0)
             {
@@ -103,13 +104,17 @@ public class Tutorial : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
             yield return new WaitForSeconds(0.5f);
+            if(cameraHandler.transform.position != new Vector3(0, 0, -90))
+            {
+                redSide.SetActive(false);
+                yield break;
+            }
             while (redOpacity.alpha < 1)
             {
                 redOpacity.alpha += 0.1f;
                 yield return new WaitForSeconds(0.1f);
             }
         } 
-        redSide.SetActive(false); ;
 
     }
 

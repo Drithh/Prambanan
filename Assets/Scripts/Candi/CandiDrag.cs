@@ -176,8 +176,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             {
                 rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 canDrag = false;
-                StartCoroutine(Waiter());
-                transform.SetSiblingIndex(0);
+                StartCoroutine(CandiPlaced());
                 return;
             }
         }
@@ -195,7 +194,7 @@ public class CandiDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         yield return new WaitForSeconds(0.003f);
     }
 
-    IEnumerator Waiter()
+    IEnumerator CandiPlaced()
     {
         gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
         for (float i = 1; i < 1.25f; i += 0.01f)

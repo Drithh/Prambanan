@@ -21,8 +21,6 @@ public class GameSceneManager : MonoBehaviour
     public static int playerLevel = 0;
     public static int askedLevel;
 
-    static AsyncOperation async;
-
     private void Awake()
     {
 
@@ -85,7 +83,6 @@ public class GameSceneManager : MonoBehaviour
                 sceneIndex = SceneManager.GetActiveScene().buildIndex;
             }
         }
-        Debug.Log(sceneIndex);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         StartCoroutine(SceneLoader(sceneIndex));
     }
@@ -132,6 +129,7 @@ public class GameSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("WinLoseMenu", LoadSceneMode.Additive);
         playerLevel++;
+        if (playerLevel == 6) playerLevel--;
         WinLoseMenu.condition = 1;
     }
 

@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class RoundWin : MonoBehaviour
 {
-    public int difficultyLevel;
+    public float difficultyLevel;
     private bool askedToWin = false;
 
     private void Update()
     {
-        if (GameObject.FindGameObjectWithTag("GuideParent") == null && !askedToWin && !GameObject.Find("Tutorial"))
+        if (((GameObject.FindGameObjectWithTag("GuideParent") == null  && !GameObject.Find("Tutorial")) || Input.GetKeyDown(KeyCode.F12)) && !askedToWin)
         {
             askedToWin = true;
             GameSceneManager.RoundWin();
+
         }
     }
-
-
 }

@@ -44,8 +44,8 @@ public class CountdownTimer : MonoBehaviour
 
     IEnumerator GetTotalTime()
     {
-        yield return new WaitForSeconds(0.5f);
-        if (CandiSpawner.totalSpawnAllBlock > 0)
+        yield return new WaitForSeconds(3f);
+        if(CandiSpawner.totalSpawnAllBlock > 0)
         {
             startingTime = ((CandiSpawner.totalSpawnAllBlock / GameObject.Find("Game").GetComponent<RoundWin>().difficultyLevel) * 15);
             currentTime = startingTime;

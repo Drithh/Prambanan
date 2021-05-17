@@ -11,6 +11,7 @@ TagManager:
   - GuideParent
   - Game
   - Blueprint1
+  - Candi
   layers:
   - Default
   - TransparentFX

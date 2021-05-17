@@ -23,16 +23,15 @@ public class CameraHandler : MonoBehaviour
         if (mousePosScaledY > screenHeightScaled - edgeScreen)
         {
             mousePosSide = edgeScreen - (screenHeightScaled - mousePosScaledY);
-            transform.position = new Vector3(transform.position.x , Mathf.Clamp(transform.position.y + (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
+            transform.position = new Vector3(transform.position.x , Mathf.Clamp(transform.position.y + (speed * (mousePosSide > 20 ? 20 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
         }
 
         if (mousePosScaledY < edgeScreen)
         {
             mousePosSide = (edgeScreen - mousePosScaledY);
-            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - (speed * (mousePosSide > 40 ? 40 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - (speed * (mousePosSide > 20 ? 20 : mousePosSide) * Time.deltaTime), 0f, 200f), transform.position.z);
         }
 
-        // Kekanan
         if (mousePosScaledX > screenWidthScaled - edgeScreen)
         {
             mousePosSide = edgeScreen - (screenWidthScaled - mousePosScaledX);
@@ -40,7 +39,6 @@ public class CameraHandler : MonoBehaviour
         }
 
 
-        // Kekiri
         if (mousePosScaledX < edgeScreen)
         {
             mousePosSide = (edgeScreen - mousePosScaledX);

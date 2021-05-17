@@ -13,7 +13,7 @@ public class OptionsMenu : MonoBehaviour
 
     IEnumerator OptionsMessage()
     {
-        Transform gameFinished = transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().transform;
+        Transform gameFinished = transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().transform;
         gameFinished.GetComponent<CanvasGroup>().alpha = 0f;
         for (float scaleUI = 0; scaleUI < 0.51f; scaleUI += 0.05f)
         {
@@ -22,7 +22,7 @@ public class OptionsMenu : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.01f);
         }
         gameFinished.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(4f);
 
         while (gameFinished.GetComponent<CanvasGroup>().alpha > 0)
         {

@@ -130,62 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2019202966}
     m_Modifications:
-    - target: {fileID: 113821448, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 113821448, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
-    - target: {fileID: 113821448, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 81d4ef817525e174f9d2cd335667ecf2, type: 3}
-    - target: {fileID: 113821448, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 100bf01167733bf4f987fe461e0ba1e5, type: 3}
-    - target: {fileID: 379043892, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 868083109, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 868083109, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: spriteArray.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: ba2995ae496ae1f4b99e775a9db2ebf6, type: 3}
-    - target: {fileID: 868083110, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
-    - target: {fileID: 868083110, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 868083110, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 868083110, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 868083110, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1259657198, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
-    - target: {fileID: 222345986489378669, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2870951857ab7f54bbffd4caf49fabfc, type: 3}
     - target: {fileID: 4882091803182768336, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -252,11 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882091803182768336, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 247
+      value: 380.2
       objectReference: {fileID: 0}
     - target: {fileID: 4882091803182768336, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.45
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4882091803182768336, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -273,10 +217,6 @@ PrefabInstance:
     - target: {fileID: 7664246709981173380, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
       propertyPath: m_Name
       value: Blueprint1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7664246709981173380, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879f96ecdb1c8074f9fade65a553e7c5, type: 3}
@@ -462,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9094cedc06e88344aaeb35b66f44dece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyLevel: 3
+  difficultyLevel: 2.5
 --- !u!1 &668179637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1232,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3479714484172319410, guid: b0ee86089c016ee48a309f01c2e7da96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474479830609012708, guid: b0ee86089c016ee48a309f01c2e7da96, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

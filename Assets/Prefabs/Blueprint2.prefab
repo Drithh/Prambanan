@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9168194524488990749}
   - component: {fileID: 8857840592675992892}
   m_Layer: 0
-  m_Name: Horizontal (15)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 180270210756661365}
   - component: {fileID: 1437448904456628356}
   m_Layer: 0
-  m_Name: Horizontal (28)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 601280415553333942}
   - component: {fileID: 6318028753943718480}
   m_Layer: 0
-  m_Name: Square (13)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 4412586135392591113}
   - component: {fileID: 7642464247432364406}
   m_Layer: 0
-  m_Name: Horizontal (3)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 4157885585691327711}
   - component: {fileID: 4822337990554218959}
   m_Layer: 0
-  m_Name: Horizontal (7)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 6626840180394612934}
   - component: {fileID: 6623672325073523012}
   m_Layer: 0
-  m_Name: Square (7)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 1970790523885780173}
   - component: {fileID: 2697683175142485709}
   m_Layer: 0
-  m_Name: Horizontal (22)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 5699780975844931891}
   - component: {fileID: 2846283725330415606}
   m_Layer: 0
-  m_Name: Horizontal (4)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 1940427502221764573}
   - component: {fileID: 3884888186872361896}
   m_Layer: 0
-  m_Name: Square (15)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 3637884304032076625}
   - component: {fileID: 5325196412108318512}
   m_Layer: 0
-  m_Name: Square (6)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 1997592153093403812}
   - component: {fileID: 6637322831135299733}
   m_Layer: 0
-  m_Name: Vertical (2)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 372871134111496301}
   - component: {fileID: 3861066758924655728}
   m_Layer: 0
-  m_Name: Vertical (5)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 5318056909486551702}
   - component: {fileID: 4662263228892747151}
   m_Layer: 0
-  m_Name: Horizontal (25)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 1515177526035596542}
   - component: {fileID: 8697457708168181483}
   m_Layer: 0
-  m_Name: Horizontal (6)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 7136287143404192508}
   - component: {fileID: 4013501873097124475}
   m_Layer: 0
-  m_Name: Square (9)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,9 +1342,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3479714484172319410}
   - component: {fileID: 8325679358904715879}
+  - component: {fileID: 1984262184855378884}
+  - component: {fileID: 4474479830609012708}
   m_Layer: 0
   m_Name: Blueprint2
-  m_TagString: Untagged
+  m_TagString: Blueprint1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1381,6 +1383,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9378bd8f574db44b5cdc5f180f5338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalCandi: 2300000012000000
+--- !u!225 &1984262184855378884
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861709054258388198}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!82 &4474479830609012708
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861709054258388198}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9d7c50784f451494d88bbf4602b3abdc, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2701720860637574124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1505,7 @@ GameObject:
   - component: {fileID: 8693419304660596202}
   - component: {fileID: 6481419404641944637}
   m_Layer: 0
-  m_Name: Square (19)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1484,7 +1595,7 @@ GameObject:
   - component: {fileID: 6818380684713803258}
   - component: {fileID: 4424856230912184284}
   m_Layer: 0
-  m_Name: Square (12)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,7 +1688,7 @@ GameObject:
   - component: {fileID: 5257296332598860861}
   - component: {fileID: 1683544969892680414}
   m_Layer: 0
-  m_Name: Horizontal (26)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1665,7 +1776,7 @@ GameObject:
   - component: {fileID: 5492315920674007342}
   - component: {fileID: 4388606399541400625}
   m_Layer: 0
-  m_Name: Square (18)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1753,7 +1864,7 @@ GameObject:
   - component: {fileID: 446989701089574566}
   - component: {fileID: 7291008098464348601}
   m_Layer: 0
-  m_Name: Horizontal (13)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1841,7 +1952,7 @@ GameObject:
   - component: {fileID: 1835537741346830653}
   - component: {fileID: 5421701576451064422}
   m_Layer: 0
-  m_Name: Square (16)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1929,7 +2040,7 @@ GameObject:
   - component: {fileID: 3558705351424489232}
   - component: {fileID: 3539364002603798607}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2017,7 +2128,7 @@ GameObject:
   - component: {fileID: 9009635551803186598}
   - component: {fileID: 1612747085300582955}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2109,7 +2220,7 @@ GameObject:
   - component: {fileID: 269572445802108122}
   - component: {fileID: 1674608248641914247}
   m_Layer: 0
-  m_Name: Horizontal (2)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2197,7 +2308,7 @@ GameObject:
   - component: {fileID: 7752434510994772693}
   - component: {fileID: 2967321731060821497}
   m_Layer: 0
-  m_Name: Vertical (3)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,7 +2396,7 @@ GameObject:
   - component: {fileID: 8473748498011081072}
   - component: {fileID: 7749972818345602521}
   m_Layer: 0
-  m_Name: Horizontal (23)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2375,7 +2486,7 @@ GameObject:
   - component: {fileID: 952182718354404314}
   - component: {fileID: 770067100048513024}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2463,7 +2574,7 @@ GameObject:
   - component: {fileID: 2835679102782809582}
   - component: {fileID: 5831874376252697252}
   m_Layer: 0
-  m_Name: Horizontal (11)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2558,7 +2669,7 @@ GameObject:
   - component: {fileID: 669029193739883337}
   - component: {fileID: 7159671483427505977}
   m_Layer: 0
-  m_Name: Square (11)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2646,7 +2757,7 @@ GameObject:
   - component: {fileID: 3105729091316479114}
   - component: {fileID: 409522940983462503}
   m_Layer: 0
-  m_Name: Vertical (4)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2734,7 +2845,7 @@ GameObject:
   - component: {fileID: 4597461107939067264}
   - component: {fileID: 462253702999604760}
   m_Layer: 0
-  m_Name: Horizontal (10)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2822,7 +2933,7 @@ GameObject:
   - component: {fileID: 7051766259905848494}
   - component: {fileID: 4643761724734756680}
   m_Layer: 0
-  m_Name: Square (7)
+  m_Name: Blueprint2
   m_TagString: GuideParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2911,7 +3022,7 @@ GameObject:
   - component: {fileID: 1281255543648292958}
   - component: {fileID: 1687029572257652269}
   m_Layer: 0
-  m_Name: Square (5)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,7 +3110,7 @@ GameObject:
   - component: {fileID: 2194147217589768759}
   - component: {fileID: 7445754146709465142}
   m_Layer: 0
-  m_Name: Horizontal (5)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3087,7 +3198,7 @@ GameObject:
   - component: {fileID: 7848534347074207525}
   - component: {fileID: 8720319191538333050}
   m_Layer: 0
-  m_Name: Square (8)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3175,7 +3286,7 @@ GameObject:
   - component: {fileID: 4175796570780686664}
   - component: {fileID: 9063926738772650922}
   m_Layer: 0
-  m_Name: Horizontal (6)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3271,7 +3382,7 @@ GameObject:
   - component: {fileID: 8926463585971543769}
   - component: {fileID: 3415422419143955980}
   m_Layer: 0
-  m_Name: Horizontal (18)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,7 +3470,7 @@ GameObject:
   - component: {fileID: 4194911200152274132}
   - component: {fileID: 4894371236238176313}
   m_Layer: 0
-  m_Name: Horizontal (24)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3450,7 +3561,7 @@ GameObject:
   - component: {fileID: 4720810911370788262}
   - component: {fileID: 8616857402851310998}
   m_Layer: 0
-  m_Name: Vertical (6)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3542,7 +3653,7 @@ GameObject:
   - component: {fileID: 2162643200335478168}
   - component: {fileID: 8880149192747203399}
   m_Layer: 0
-  m_Name: Horizontal (17)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3630,7 +3741,7 @@ GameObject:
   - component: {fileID: 2743403881597548209}
   - component: {fileID: 3572074612872743214}
   m_Layer: 0
-  m_Name: Horizontal (14)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3718,7 +3829,7 @@ GameObject:
   - component: {fileID: 1410506031671921615}
   - component: {fileID: 6046857828491854892}
   m_Layer: 0
-  m_Name: Horizontal (9)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3806,7 +3917,7 @@ GameObject:
   - component: {fileID: 7036205055596339743}
   - component: {fileID: 6916680068856081636}
   m_Layer: 0
-  m_Name: Horizontal (21)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3894,7 +4005,7 @@ GameObject:
   - component: {fileID: 2987615562244493977}
   - component: {fileID: 3136884024840417813}
   m_Layer: 0
-  m_Name: Horizontal (27)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3982,7 +4093,7 @@ GameObject:
   - component: {fileID: 7860651176100804461}
   - component: {fileID: 2368698902158531457}
   m_Layer: 0
-  m_Name: Horizontal (8)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4070,7 +4181,7 @@ GameObject:
   - component: {fileID: 9181197568263498310}
   - component: {fileID: 428167121498122778}
   m_Layer: 0
-  m_Name: Horizontal (16)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4158,7 +4269,7 @@ GameObject:
   - component: {fileID: 1765822197835315406}
   - component: {fileID: 9075807663173063398}
   m_Layer: 0
-  m_Name: Vertical (10)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4246,7 +4357,7 @@ GameObject:
   - component: {fileID: 5807595455071846238}
   - component: {fileID: 7552623941589217045}
   m_Layer: 0
-  m_Name: Square (14)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4334,7 +4445,7 @@ GameObject:
   - component: {fileID: 8198795831558242326}
   - component: {fileID: 4208878633359919902}
   m_Layer: 0
-  m_Name: Horizontal (19)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4422,7 +4533,7 @@ GameObject:
   - component: {fileID: 3525504721915379145}
   - component: {fileID: 495796345613832430}
   m_Layer: 0
-  m_Name: Vertical (11)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4510,7 +4621,7 @@ GameObject:
   - component: {fileID: 7291602410560374003}
   - component: {fileID: 8107802588888851732}
   m_Layer: 0
-  m_Name: Square (10)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4602,7 +4713,7 @@ GameObject:
   - component: {fileID: 30407778498112559}
   - component: {fileID: 6134066035690225694}
   m_Layer: 0
-  m_Name: Horizontal (12)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4690,7 +4801,7 @@ GameObject:
   - component: {fileID: 8617520371267036492}
   - component: {fileID: 3268230905660728445}
   m_Layer: 0
-  m_Name: Vertical (1)
+  m_Name: Blueprint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
